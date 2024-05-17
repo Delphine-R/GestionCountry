@@ -14,9 +14,11 @@ class DetailsClientActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.details_client_lastname_textview)
 
         intent.extras?.apply {
-            val id = getInt(CLIENT_ID_EXTRA)
-            val client = Client.generate()[id]
-            lastNameTextView.text = client.lastName
+            val client = getParcelable(CLIENT_ID_EXTRA) as? Client
+
+            client?.let {
+                lastNameTextView.text = it.lastName
+            }
         }
     }
 }
