@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailsClientActivity">
+    tools:context=".DetailsCountryActivity">
 
     <TextView
-        android:id="@+id/details_client_lastname_textview"
+        android:id="@+id/details_country_commonName_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -15,6 +15,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="Nom" />
+
+    <TextView
+        android:id="@+id/details_country_capital_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Capital" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -24,14 +34,13 @@
         app:layout_constraintGuide_begin="191dp" />
 
     <ImageView
-        android:id="@+id/details_client_imageview"
+        android:id="@+id/details_country_imageview"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
