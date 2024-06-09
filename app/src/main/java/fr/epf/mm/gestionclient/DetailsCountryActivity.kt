@@ -11,7 +11,9 @@ class DetailsCountryActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details_country)
 
-        val lastNameTextView = findViewById<TextView>(R.id.details_country_lastname_textview)
+        val commonNameTextView = findViewById<TextView>(R.id.details_country_commonName_textview)
+        val officialNameTextView = findViewById<TextView>(R.id.details_country_officialName_textview)
+        val capitalTextView = findViewById<TextView>(R.id.details_country_capital_textview)
         val imageView = findViewById<ImageView>(R.id.details_country_imageview)
 
         intent.extras?.apply {
@@ -21,7 +23,7 @@ class DetailsCountryActivity : AppCompatActivity() {
                 commonNameTextView.text = it.commonName
                 officialNameTextView.text = it.officialName
                 capitalTextView.text = it.capital
-                imageView.setImageResource(country.getImage())
+                country.loadImageInto(imageView)
             }
         }
     }
