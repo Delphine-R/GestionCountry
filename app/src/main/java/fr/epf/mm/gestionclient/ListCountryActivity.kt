@@ -21,7 +21,7 @@ import java.io.IOException
 import java.util.concurrent.TimeUnit
 
 private const val TAG = "ListCountryActivity"
-private const val MAX_RETRIES = 3
+private const val MAX_RETRIES = 5
 
 class ListCountryActivity : AppCompatActivity() {
 
@@ -43,9 +43,6 @@ class ListCountryActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.action_add_country -> {
-                startActivity(Intent(this, AddCountryActivity::class.java))
-            }
             R.id.action_synchro -> {
                 synchro()
             }
@@ -87,7 +84,7 @@ class ListCountryActivity : AppCompatActivity() {
             .client(client)
             .build()
 
-        val PaysService = retrofit.create(RandomPaysService::class.java)
+        val PaysService = retrofit.create(FindPaysService::class.java)
 
         runBlocking {
             try {

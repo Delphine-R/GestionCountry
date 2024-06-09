@@ -3,7 +3,7 @@ package fr.epf.mm.gestionclient
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface RandomPaysService {
+interface FindPaysService {
     @GET("v3.1/name/{country}")
 suspend  fun getPays(@Query("results") size: Int) : GetPaysResult
 }

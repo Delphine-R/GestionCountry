@@ -12,21 +12,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GestionClient2023MIN2"
         tools:targetApi="31">
+
+        <!-- Define the HomeActivity as the launcher activity -->
         <activity
-            android:name=".DetailsClientActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ListClientActivity"
-            android:exported="true" >
+            android:name=".HomeActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
+        <!-- Define other activities as needed -->
         <activity
-            android:name=".AddClientActivity"
+            android:name=".DetailsCountryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListCountryActivity"
             android:exported="true" />
     </application>
 
